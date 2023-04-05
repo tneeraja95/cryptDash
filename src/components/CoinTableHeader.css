@@ -1,0 +1,7 @@
+.coinTableHeader th {
+    text-align: end;
+    font-size: 12px;
+    font-family: Inter,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    text-wrap: nowrap;
+}

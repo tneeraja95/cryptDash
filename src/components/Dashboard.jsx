@@ -11,7 +11,7 @@ import CoinRow from "./CoinRow";
 // name | price | 1h | 24h | 7d |marketcap |volumne (24h) |circulating supply |last 7 days graph
 
 function Dashboard({ coinsList }) {
-    console.log(coinsList);
+    //console.log(coinsList);
   return (
     <TableContainer component={Paper}>
       <Table>

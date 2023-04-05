@@ -1,7 +1,57 @@
+.coinRow {
+    font-family: Inter,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif;
+
+}
+.coinRow .price_change {
+  display: flex;
+  flex-direction: row;
+}
 .coinRow .green {
-    color: green;
+  color: green;
 }
 
 .coinRow .red {
-    color: red;
+  color: red;
+}
+
+.coinRow .red svg {
+  transform: scaleY(-1);
+  content: "\0048";
+}
+
+.coinRow .price, .coinRow .market_cap {
+    text-align: end;
+}
+
+.coinRow .name {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.coinRow .name img{
+    height: 24px;
+    margin-inline-end: 8px;
+}
+
+.coinRow .name .symbol{
+    text-transform: uppercase;
+    color : rgb(88, 102, 126);
+    margin-inline-start: 8px;
+}
+
+.coinRow .volume .symbol {
+    text-transform: uppercase;
+    color : rgb(88, 102, 126);
+    margin-inline-start: 4px;
+}
+
+.coinRow .volume {
+    text-align: end;
+}
+
+.coinRow .volume .volume_in_coin {
+    font-size: 12px;
+    color : rgb(88, 102, 126)
 }

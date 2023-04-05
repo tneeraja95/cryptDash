@@ -16,6 +16,7 @@ function parseFetchData(fetchData) {
       price_change_percentage_7d_in_currency: item.price_change_percentage_7d_in_currency,
       total_volume: item.total_volume,
       circulating_supply: item.circulating_supply,
+      max_supply: item.max_supply,
       last_updated: item.last_updated
     };
     return obj;
