@@ -19,7 +19,7 @@
   content: "\0048";
 }
 
-.coinRow .price, .coinRow .market_cap {
+.coinRow .price, .coinRow .market_cap, .coinRow .circulating_supply {
     text-align: end;
 }
 
@@ -41,7 +41,7 @@
     margin-inline-start: 8px;
 }
 
-.coinRow .volume .symbol {
+.coinRow .volume .symbol, .coinRow .circulating_supply .symbol {
     text-transform: uppercase;
     color : rgb(88, 102, 126);
     margin-inline-start: 4px;
@@ -54,4 +54,34 @@
 .coinRow .volume .volume_in_coin {
     font-size: 12px;
     color : rgb(88, 102, 126)
+}
+
+.coinRow .circulating_supply {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.coinRow .circulating_supply .outer_bar {
+    height: 6px;
+    width: 160px;
+    border-radius: 3px;
+    background-color: rgb(239, 242, 245);
+    margin-top: 4px;
+}
+
+.coinRow .circulating_supply .inner_bar {
+    background-color: rgb(207, 214, 228);
+    height: 6px;
+    border-radius: 3px;
+}
+
+.tooltip {
+    width: 200px;
+}
+
+.tooltip .prec{
+    justify-content: space-between;
+    display: flex;
+    flex-grow: 1;
 }
