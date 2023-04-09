@@ -1,6 +1,7 @@
 .coinRow {
     font-family: Inter,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif;
     background-color: white;
+    cursor: pointer;
 }
 
 .coinRow:hover, 

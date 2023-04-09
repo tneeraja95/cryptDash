@@ -8,8 +8,12 @@ import TableRow from "@mui/material/TableRow";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import "./CoinRow.css";
 import CirculatingSupplyToolTip from "./CirculatingSupplyToolTip";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import CurrencyDetail from "./CurrencyDetail.jsx";
+
 
 function CoinRow({ item, index }) {
+  const navigate = useNavigate();
   function format_price_change_prec(change_prec) {
     let classname = change_prec > 0 ? "green" : "red";
     classname += " price_change";
@@ -70,8 +74,12 @@ function CoinRow({ item, index }) {
     );
   }
 
+  function handleOnCLick(id) {
+    navigate(`/currencies/${id}`);
+  }
+
   return (
-    <TableRow key={item.id} className="coinRow">
+   <TableRow key={item.id} className="coinRow" onClick={()=>handleOnCLick(item.id)}>
       <TableCell>{index + 1}</TableCell>
       {format_name(item.name, item.image, item.symbol)}
       {format_price(item.current_price)}
@@ -85,7 +93,7 @@ function CoinRow({ item, index }) {
         item.max_supply,
         item.symbol
       )}
-    </TableRow>
+     </TableRow>
   );
 }
 

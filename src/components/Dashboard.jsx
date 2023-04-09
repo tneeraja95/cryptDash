@@ -8,13 +8,12 @@ import CoinRow from "./CoinRow";
 // name | price | 1h | 24h | 7d |marketcap |volumne (24h) |circulating supply |last 7 days graph
 
 function Dashboard({ coinsList }) {
-    //console.log(coinsList);
   return (
     <TableContainer component={Paper} style={{overflow:"auto", maxHeight: "100vh"}}>
       <Table style={{position: "reltive"}}>
         <CoinTableHeader/>
         <TableBody>
-            {coinsList.map((item, index) => {return <CoinRow item={item} index={index} key={item.id} />})}
+         {coinsList.map((item, index) => {return <CoinRow item={item} index={index} key={item.id} />})}
         </TableBody>
       </Table>
     </TableContainer>
