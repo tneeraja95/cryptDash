@@ -4,4 +4,8 @@
     font-family: Inter,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif;
     font-weight: bold;
     text-wrap: nowrap;
+    position: sticky;
+    top: 0; 
+    background: aliceblue;
+    z-index: 100;
 }

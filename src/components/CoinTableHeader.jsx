@@ -8,7 +8,7 @@ function CoinTableHeader() {
     <TableHead className="coinTableHeader">
       <TableRow>
         <TableCell>#</TableCell>
-        <TableCell style={{ textAlign: "start" }}>Name</TableCell>
+        <TableCell style={{ textAlign: "start", left:"0", zIndex:"101" }}>Name</TableCell>
         <TableCell>Price</TableCell>
         <TableCell>1h%</TableCell>
         <TableCell>24h%</TableCell>

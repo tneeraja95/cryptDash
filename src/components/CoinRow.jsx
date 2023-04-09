@@ -47,7 +47,7 @@ function CoinRow({ item, index }) {
 
   function format_name(name, image, symbol) {
     return (
-      <TableCell>
+      <TableCell className="freeze_name">
         <span className="name">
           <img src={image} />
           {name} <div className="symbol">{symbol}</div>

@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 10px;
+}
+.header img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.header span {
+    font-family: 'Gill Sans', sans-serif;
+    font-weight: 600;
+    font-size: xx-large;
+    margin: 10px;
+
+}
+

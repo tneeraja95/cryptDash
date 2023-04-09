@@ -1,9 +1,6 @@
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import CoinTableHeader from "./CoinTableHeader";
 import CoinRow from "./CoinRow";
@@ -13,8 +10,8 @@ import CoinRow from "./CoinRow";
 function Dashboard({ coinsList }) {
     //console.log(coinsList);
   return (
-    <TableContainer component={Paper}>
-      <Table>
+    <TableContainer component={Paper} style={{overflow:"auto", maxHeight: "100vh"}}>
+      <Table style={{position: "reltive"}}>
         <CoinTableHeader/>
         <TableBody>
             {coinsList.map((item, index) => {return <CoinRow item={item} index={index} key={item.id} />})}
