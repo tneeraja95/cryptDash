@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import parseFetchData from "./utils/parseFetchData";
-import Header from "./components/Header";
 import Dashboard from "./components/Dashboard";
+import Loading from "./components/Loading";
 
 function App() {
   const [coinsList, setCoinsList] = useState([]);
@@ -13,15 +13,15 @@ function App() {
       );
       let result = await apiresponse.json();
       console.log(result);
-      setCoinsList(parseFetchData(result));
+        setCoinsList(parseFetchData(result));
     };
     fetchData();
   }, []);
 
   return (
     <div>
-      <Header />
-     {coinsList && <Dashboard coinsList={coinsList} />}
+      {coinsList.length == 0 && <Loading />}
+      {coinsList.length > 0 && <Dashboard coinsList={coinsList} />}
     </div>
   );
 }

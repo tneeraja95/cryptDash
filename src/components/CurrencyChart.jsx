@@ -12,7 +12,9 @@ function CurrencyChart({ coinChartData }) {
     console.log(thisObj);
     let plotPointValue = thisObj.series[0].points[0].y;
     let yAxis = thisObj.yAxis[0];
-    console.log(plotPointValue);
+
+    thisObj.series[0].update({ threshold: plotPointValue });
+
     yAxis.update({
       plotLines: [
         {
@@ -43,29 +45,17 @@ function CurrencyChart({ coinChartData }) {
       {
         name: "Prices",
         data: coinChartData.prices,
-        zones: [
-          {
-            //     value: plotLineValue,
-            color: "rgb(234, 57, 67)", //red
-          },
-          { color: "rgb(22, 199, 132)" },
-        ],
-        fillOpacity: 1,
+        negativeColor: "rgba(234, 57, 67)",
+        color: "rgb(22, 199, 132)",
+        fillColor: "rgb(22, 199, 132, 0.1)",
+        negativeFillColor: "rgb(234, 57, 67, 0.1)",
       },
-      // {name: "Market cap", data: coinChartData.market_caps},
     ],
 
     chart: {
+      type: "area",
       events: {
-        click() {
-          console.log("redraw is triggered");
-          let plotPointValue = thisObj.series[0].data.find(
-            (el) => el !== undefined
-          ).y;
-          handleRangeChange(this);
-        },
         render() {
-          console.log("render is triggered", setPlotLines);
           if (setPlotLines) {
             setPlotLines = false;
             handleRangeChange(this);
@@ -73,6 +63,14 @@ function CurrencyChart({ coinChartData }) {
         },
       },
     },
+
+    navigator: {
+      series: {
+        color: "#EFF2F5",
+        fillColor: "#EFF2F5",
+      },
+    },
+
     tooltip: {
       shared: true,
       useHTML: true,
@@ -84,9 +82,6 @@ function CurrencyChart({ coinChartData }) {
         return date + "      " + time + "\nPrice " + this.y; // + " \nVolume " + this.points[1].y;
       },
     },
-    legend: {
-      enabled: false,
-    },
 
     rangeSelector: {
       allButtonsEnabled: true,
@@ -96,40 +91,45 @@ function CurrencyChart({ coinChartData }) {
           type: "day",
           count: 1,
           text: "1d",
-          title: "View 1 day",    
-           events : {
-            click: function(){console.log(this); setPlotLines=true}
-          }
-     
+          title: "View 1 day",
+          events: {
+            click: function () {
+              setPlotLines = true;
+            },
+          },
         },
         {
           type: "day",
           count: 7,
           text: "7d",
           title: "View 7 days",
-          events : {
-            click: function(){console.log(this); setPlotLines=true}
-          }
+          events: {
+            click: function () {
+              setPlotLines = true;
+            },
+          },
         },
         {
           type: "month",
           count: 1,
           text: "1m",
           title: "View 1 months",
-          events : {
-            click: function(){console.log(this); setPlotLines=true}
-          }
-     
+          events: {
+            click: function () {
+              setPlotLines = true;
+            },
+          },
         },
         {
           type: "month",
           count: 3,
           text: "3m",
           title: "View 3 months",
-          events : {
-            click: function(){console.log(this); setPlotLines=true}
-          }
-     
+          events: {
+            click: function () {
+              setPlotLines = true;
+            },
+          },
         },
       ],
     },
@@ -152,10 +152,7 @@ function CurrencyChart({ coinChartData }) {
     },
   });
 
-  return (
-    <div style={{ margin: "20px" }}>
-      <div id="container" />
-    </div>
+  return (<></>
   );
 }
 
