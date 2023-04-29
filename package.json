@@ -15,6 +15,7 @@
     "@mui/icons-material": "^5.15.18",
     "@mui/material": "^5.15.18",
     "@mui/x-charts": "^7.5.1",
+    "date-fns": "^3.6.0",
     "highcharts": "^11.4.3",
     "highcharts-react-official": "^3.2.1",
     "react": "^18.2.0",

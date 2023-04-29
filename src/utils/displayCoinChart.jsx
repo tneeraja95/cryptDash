@@ -1,15 +1,12 @@
 import Highcharts from "highcharts/highstock";
-import HighchartsReact from "highcharts-react-official";
 import highchartsAccessibility from "highcharts/modules/accessibility";
 
 highchartsAccessibility(Highcharts);
 
-function CurrencyChart({ coinChartData }) {
-  console.log("inside currreny chart");
+function CurrencyChart(coinChartData) {
   let setPlotLines = true;
 
   function handleRangeChange(thisObj) {
-    console.log(thisObj);
     let plotPointValue = thisObj.series[0].points[0].y;
     let yAxis = thisObj.yAxis[0];
 
@@ -75,7 +72,6 @@ function CurrencyChart({ coinChartData }) {
       shared: true,
       useHTML: true,
       formatter: function () {
-        //  console.log(this);
         let dateTime = new Date(this.x);
         let date = dateTime.toLocaleDateString();
         let time = dateTime.toLocaleTimeString();
@@ -138,7 +134,7 @@ function CurrencyChart({ coinChartData }) {
       rules: [
         {
           condition: {
-            maxWidth: 500,
+            maxWidth: 1000,
           },
           chartOptions: {
             legend: {
@@ -151,9 +147,6 @@ function CurrencyChart({ coinChartData }) {
       ],
     },
   });
-
-  return (<></>
-  );
 }
 
 export default CurrencyChart;

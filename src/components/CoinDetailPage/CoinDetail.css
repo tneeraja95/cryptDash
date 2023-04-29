@@ -1,0 +1,187 @@
+.cdp {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 750px) {
+    .cdp {
+      flex-direction: column-reverse;
+    }
+  }
+
+#container {
+    flex: 1;
+}
+
+.overview {
+  /* width: 330px; */
+  padding: 10px;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, segoe ui, Roboto,
+    Helvetica, Arial, sans-serif;
+  border-right: 1px solid rgb(199, 199, 199);
+}
+
+.overview .basics {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.overview .basics .name {
+  font-size: 19px;
+  text-transform: capitalize;
+  font-weight: 600;
+  padding: 0 8px;
+}
+
+.overview .basics .symbol {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.overview .price {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.overview .perc24h {
+  font-size: 14px;
+}
+.overview .green,
+.overview .red {
+  color: rgb(22, 199, 132);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px;
+}
+
+.overview .green {
+  color: rgb(22, 199, 132);
+}
+
+.overview .red {
+  color: rgb(234, 57, 67);
+}
+
+.overview .red svg {
+  transform: scaleY(-1);
+  content: "\0048";
+}
+
+.overview .marketCap {
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.overview .marketCap .desc {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.overview .value {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.overview .marketCap .desc .name {
+  align-content: center;
+}
+
+.overview .MuiSlider-thumbSizeSmall {
+  border-radius: 0% !important;
+  width: 2px !important;
+}
+
+.overview .marketCap .rank {
+  background-color: rgb(239, 242, 245);
+}
+
+.overview .rank {
+  padding: 3px;
+  border-radius: 3px;
+  margin: 3px 3px 3px 5px;
+}
+.overview .slider {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+}
+
+.overview .volume,
+.overview .volumeMarket,
+.overview .circulatingSupply,
+.overview .ath,
+.overview .atl {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+.overview .links {
+  margin: 15px 0;
+}
+
+.overview .links .name,
+.overview .perf .name {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.overview .link {
+  text-decoration: none;
+  color: black;
+  background-color: rgb(239, 242, 245);
+  display: flex;
+  flex-direction: row;
+  padding: 3px 8px;
+  width: fit-content;
+  border-radius: 5px;
+  font-size: 12px;
+  align-items: center;
+  margin: 0 5px;
+  text-transform: capitalize;
+}
+
+.overview .link svg {
+  width: 16px;
+  padding: 0 2px;
+}
+
+.overview .perf .lowHigh {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.overview .perf .low,
+.overview .perf .high {
+  display: flex;
+  flex-direction: column;
+}
+
+.overview .perf .high {
+  align-items: end;
+}
+
+.overview .atl .green,
+.overview .atl .red,
+.overview .ath .green,
+.overview .ath .red {
+  margin: 0;
+}
+
+.overview .ath .athPrice,
+.overview .atl .atlPrice {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}

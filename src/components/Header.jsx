@@ -6,7 +6,7 @@ function Header() {
   return (
     <Link to="/" className='header'>
       <img src={icon} alt="header_logo" />
-      <span>Crypt Dash</span>
+      <div>Crypt Dash</div>
     </Link>
   )
 }

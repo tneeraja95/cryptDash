@@ -1,9 +1,9 @@
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
-import "./CoinTableHeader.css";
+import "./DashboardHeader.css";
 
-function CoinTableHeader() {
+function DashboardHeader() {
   return (
     <TableHead className="coinTableHeader">
       <TableRow>
@@ -22,4 +22,4 @@ function CoinTableHeader() {
   );
 }
 
-export default CoinTableHeader;
+export default DashboardHeader;

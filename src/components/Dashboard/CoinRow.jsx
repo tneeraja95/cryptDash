@@ -8,8 +8,7 @@ import TableRow from "@mui/material/TableRow";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import "./CoinRow.css";
 import CirculatingSupplyToolTip from "./CirculatingSupplyToolTip";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import CurrencyDetail from "./CurrencyDetail.jsx";
+import { useNavigate } from "react-router-dom";
 
 
 function CoinRow({ item, index }) {

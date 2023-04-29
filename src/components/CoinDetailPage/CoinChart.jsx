@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import CurrencyChart from "./CurrencyChart";
-import Loading from "./Loading";
+import displayCoinChart from "../../utils/displayCoinChart";
+import Loading from "../Loading";
 
-function CurrencyDetail({}) {
-  const { id } = useParams();
+function CoinChart({id}) {
   const [coinChartData, setCoinChartData] = useState([]);
   useEffect(() => {
     async function fetchData() {
@@ -15,11 +13,12 @@ function CurrencyDetail({}) {
     fetchData();
   }, []);
 
+  console.log(coinChartData)
   return <>
   <div id="container"></div>
     {Object.keys(coinChartData).length == 0 && <Loading/>}
-    {Object.keys(coinChartData).length > 0 && <CurrencyChart coinChartData = {coinChartData}/>}
+    {Object.keys(coinChartData).length > 0 && displayCoinChart(coinChartData)}
   </>;
 }
 
-export default CurrencyDetail;
+export default CoinChart;
